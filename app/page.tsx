@@ -1,3 +1,6 @@
+import { ConditionalLink } from "./components/ConditionalLink";
+import { experiences, projects } from "./home.data";
+
 export default function Home() {
   return (
     <div className="max-w-2xl mx-auto py-4 px-4 lg:pt-8 min-h-full flex flex-col gap-12">
@@ -29,30 +32,12 @@ export default function Home() {
             Experiences
           </h2>
           <ul className="list-disc list-inside">
-            <li>
-              <span className="font-medium">Full-Stack Online Trainer</span> at{" "}
-              <a
-                className="text-blue-500 hover:underline"
-                href="https://codelynx.dev"
-              >
-                Codelynx.dev
-              </a>{" "}
-              <span className="text-neutral-700">- 2022 - now</span>
-            </li>
-            <li>
-              <span className="font-medium">Full-stack Freelance</span> at YuZu{" "}
-              <span className="text-neutral-700">- 2022</span>
-            </li>
-            <li>
-              <span className="font-medium">Software Engineer</span> at{" "}
-              <a
-                className="text-blue-500 hover:underline"
-                href="https://qoqa.ch"
-              >
-                QoQa.ch
-              </a>{" "}
-              <span className="text-neutral-700">- 2018 - 2022</span>
-            </li>
+            {experiences.map((experience, i) => (
+              <li key={i}>
+                {experience.role} at <ConditionalLink {...experience.company} />{" "}
+                <span className="text-neutral-700">- {experience.date}</span>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="flex flex-col gap-1">
@@ -60,51 +45,11 @@ export default function Home() {
             Projects
           </h2>
           <ul className="list-disc list-inside">
-            <li>
-              <a
-                href="https://codeline.app"
-                className="text-blue-500 font-medium hover:underline"
-              >
-                Codeline.app
-              </a>{" "}
-              - Online developer courses LMS
-            </li>
-            <li>
-              <a
-                href="https://chat2code.dev"
-                className="text-blue-500 font-medium hover:underline"
-              >
-                Chat2Code
-              </a>{" "}
-              - AI-powered frontend code generation tool
-            </li>
-            <li>
-              <a
-                href="https://quizup.app"
-                className="text-blue-500 font-medium hover:underline"
-              >
-                QuizUp
-              </a>{" "}
-              - AI-powered quiz generation platform
-            </li>
-            <li>
-              <a
-                href="https://bulkcorrector"
-                className="text-blue-500 font-medium hover:underline"
-              >
-                BulkCorrector
-              </a>{" "}
-              - AI grammar correction tool for large texts
-            </li>
-            <li>
-              <a
-                href="https://askschema.com"
-                className="text-blue-500 font-medium hover:underline"
-              >
-                AskSchema
-              </a>{" "}
-              - Chat with your database easily
-            </li>
+            {projects.map((project, i) => (
+              <li key={i}>
+                <ConditionalLink {...project.name} /> - {project.description}
+              </li>
+            ))}
           </ul>
         </div>
       </main>
