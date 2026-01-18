@@ -55,7 +55,19 @@ export const projects: Project[] = [
     description: "Chat with your database easily",
   },
   {
-    name: { text: "Lumail", url: "https://lumail.io" },
+    name: { text: "Lumail.io", url: "https://lumail.io" },
     description: "AI-Powered newsletter builder.",
+  },
+  {
+    name: { text: "SaveIt.now", url: "https://saveit.now" },
+    description: "AI bookmark manager that finds content by vibes.",
+  },
+  {
+    name: { text: "SpyLand.ing", url: "https://spyland.ing" },
+    description: "Daily competitor landing page monitoring with AI insights.",
+  },
+  {
+    name: { text: "Thumbfa.st", url: "https://thumbfa.st" },
+    description: "AI-powered YouTube thumbnail generator.",
   },
 ];
