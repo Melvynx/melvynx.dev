@@ -5,16 +5,12 @@
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --font-default-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
     Liberation Mono, monospace;
-  --font-caption: "Space Grotesk", "Space Grotesk Fallback", var(--font-default);
-  --font-sans: "Geist", "Geist Fallback", var(--font-default);
+  --font-sans: "Lora", "Lora Fallback", var(--font-default);
   --font-mono: "Geist Mono", "Geist Mono Fallback", var(--font-default-mono);
-}
-
-* {
-  font-family: var(--font-sans);
 }
 
 body,
 html {
+  font-family: var(--font-sans);
   height: 100%;
 }
