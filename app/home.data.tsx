@@ -15,6 +15,11 @@ interface Project {
   description: string;
 }
 
+interface SocialLink {
+  text: string;
+  url: string;
+}
+
 export const experiences: Item[] = [
   {
     role: "Full-Stack Online Trainer",
@@ -34,6 +39,18 @@ export const experiences: Item[] = [
 ];
 
 export const projects: Project[] = [
+  {
+    name: { text: "Pentest", url: "https://pentest.melvynx.dev" },
+    description: "Pentest for your apps.",
+  },
+  {
+    name: { text: "Portly", url: "https://portly.melvynx.dev" },
+    description: "Port manager for macOS.",
+  },
+  {
+    name: { text: "Tchao", url: "https://tchao.app" },
+    description: "Human-controlled AI chat for small teams.",
+  },
   {
     name: { text: "Codeline.app", url: "https://codeline.app" },
     description: "Online developer courses LMS",
@@ -70,4 +87,13 @@ export const projects: Project[] = [
     name: { text: "Thumbfa.st", url: "https://thumbfa.st" },
     description: "AI-powered YouTube thumbnail generator.",
   },
+];
+
+export const socials: SocialLink[] = [
+  { text: "X", url: "https://mlv.sh/twitter" },
+  { text: "LinkedIn", url: "https://mlv.sh/linkedin" },
+  { text: "GitHub", url: "https://mlv.sh/github" },
+  { text: "YouTube", url: "https://mlv.sh/youtube" },
+  { text: "Blog", url: "https://codelynx.dev/posts" },
+  { text: "Melvynx.com", url: "https://melvynx.com" },
 ];

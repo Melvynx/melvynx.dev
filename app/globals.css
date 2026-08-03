@@ -5,12 +5,47 @@
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --font-default-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
     Liberation Mono, monospace;
-  --font-sans: "Lora", "Lora Fallback", var(--font-default);
+  --font-sans: "Geist", "Geist Fallback", var(--font-default);
   --font-mono: "Geist Mono", "Geist Mono Fallback", var(--font-default-mono);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 body,
 html {
   font-family: var(--font-sans);
   height: 100%;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes reveal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.reveal {
+  animation: reveal 500ms var(--ease-out-expo) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: reveal-fade 300ms ease both;
+  }
 }
