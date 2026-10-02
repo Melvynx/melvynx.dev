@@ -5,6 +5,7 @@ interface Item {
     url?: string;
   };
   date: string;
+  description: string;
 }
 
 interface Project {
@@ -22,19 +23,31 @@ interface SocialLink {
 
 export const experiences: Item[] = [
   {
-    role: "Full-Stack Online Trainer",
+    role: "Founder & Full-Stack Instructor",
     company: { text: "Codelynx.dev", url: "https://codelynx.dev" },
     date: "2022 - now",
+    description:
+      "Building coding courses, a developer community and the products behind them.",
+  },
+  {
+    role: "Course Creator",
+    company: { text: "Codeline.app", url: "https://codeline.app" },
+    date: "2021 - now",
+    description:
+      "Creating practical courses that have helped thousands of developers learn to code.",
   },
   {
     role: "Full-stack Freelance",
     company: { text: "YuZu" },
     date: "2022",
+    description: "Built mobile and backend features for a consumer application.",
   },
   {
     role: "Software Engineer",
     company: { text: "QoQa.ch", url: "https://qoqa.ch" },
     date: "2018 - 2022",
+    description:
+      "Worked across React interfaces, Ruby services and mobile applications.",
   },
 ];
 
@@ -53,26 +66,29 @@ export const projects: Project[] = [
   },
   {
     name: { text: "Codeline.app", url: "https://codeline.app" },
-    description: "Online developer courses LMS",
+    description: "Online developer courses LMS.",
   },
   {
     name: { text: "Chat2Code", url: "https://chat2code.dev" },
-    description: "AI-powered frontend code generation tool",
+    description: "AI-powered frontend code generation tool.",
   },
   {
     name: { text: "QuizUp", url: "https://quizup.app" },
-    description: "AI-powered quiz generation platform",
+    description: "AI-powered quiz generation platform.",
   },
   {
     name: { text: "BulkCorrector", url: "https://bulkcorrector" },
-    description: "AI grammar correction tool for large texts",
+    description: "AI grammar correction tool for large texts.",
   },
   {
     name: { text: "AskSchema", url: "https://askschema.com" },
-    description: "Chat with your database easily",
+    description: "Chat with your database easily.",
   },
   {
-    name: { text: "Lumail.io", url: "https://lumail.io" },
+    name: {
+      text: "Lumail.io",
+      url: "https://lumail.io?ref=melvynx",
+    },
     description: "AI-Powered newsletter builder.",
   },
   {

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ConditionalLink } from "./components/ConditionalLink";
 import { Reveal } from "./components/Reveal";
 import { experiences, projects, socials } from "./home.data";
@@ -27,43 +28,62 @@ export default function Home() {
 
       <main className="flex flex-1 flex-col gap-14 lg:gap-20">
         <Reveal delay={60}>
-          <section className="flex flex-col gap-4 text-pretty">
-            <h1 className="font-semibold">
-              I build software, and I teach how to build it.
-            </h1>
-            <p className="text-neutral-600">
-              I&apos;m a software engineer and entrepreneur, founder of{" "}
-              <a className={linkClass} href="https://codelynx.dev">
-                codelynx
-              </a>
-              , where I publish online coding courses and tutorials.
-            </p>
-            <p className="text-neutral-600">
-              I also create content on{" "}
-              <a className={linkClass} href="https://mlv.sh/youtube">
-                youtube
-              </a>{" "}
-              to help developers get better at their craft.
-            </p>
+          <section className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-10">
+            <Image
+              src="/melvyn.webp"
+              width={1254}
+              height={1254}
+              alt="Engraved portrait of Melvyn Malherbe"
+              sizes="(min-width: 640px) 176px, 144px"
+              preload
+              className="size-36 shrink-0 mix-blend-multiply sm:order-last sm:size-44"
+            />
+            <div className="flex flex-col gap-4 text-pretty">
+              <h1 className="font-semibold">
+                I build software, and I teach how to build it.
+              </h1>
+              <p className="text-neutral-600">
+                I&apos;m a software engineer and entrepreneur, founder of{" "}
+                <a className={linkClass} href="https://codelynx.dev">
+                  codelynx
+                </a>
+                , where I publish online coding courses and tutorials.
+              </p>
+              <p className="text-neutral-600">
+                I also create content on{" "}
+                <a className={linkClass} href="https://mlv.sh/youtube">
+                  youtube
+                </a>{" "}
+                to help developers get better at their craft.
+              </p>
+            </div>
           </section>
         </Reveal>
 
         <Reveal delay={120}>
           <section className="flex flex-col gap-4">
             <h2 className="font-semibold">Experience</h2>
-            <ul className="flex flex-col gap-2">
+            <p className="text-neutral-600">
+              Product engineering, entrepreneurship and teaching since 2018.
+            </p>
+            <ul className="mt-2 flex flex-col gap-6">
               {experiences.map((experience) => (
                 <li
                   key={experience.role}
-                  className="flex flex-col justify-between gap-x-6 sm:flex-row sm:items-baseline"
+                  className="grid grid-cols-1 gap-1 sm:grid-cols-[7rem_minmax(0,1fr)] sm:gap-x-6"
                 >
-                  <span className="text-neutral-600">
-                    {experience.role} at{" "}
-                    <ConditionalLink {...experience.company} />
-                  </span>
-                  <span className="text-neutral-400 sm:text-right">
+                  <span className="text-neutral-400 sm:pt-0.5">
                     {experience.date}
                   </span>
+                  <div className="flex min-w-0 flex-col gap-1">
+                    <h3 className="font-medium">
+                      {experience.role} at{" "}
+                      <ConditionalLink {...experience.company} />
+                    </h3>
+                    <p className="text-pretty text-neutral-500">
+                      {experience.description}
+                    </p>
+                  </div>
                 </li>
               ))}
             </ul>
@@ -100,6 +120,9 @@ export default function Home() {
               {social.text}
             </a>
           ))}
+          <a className={linkClass} href="https://lumail.io?ref=melvynx">
+            Email sent by Lumail.io
+          </a>
         </footer>
       </Reveal>
     </div>
