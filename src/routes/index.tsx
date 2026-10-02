@@ -1,12 +1,16 @@
-import Image from "next/image";
-import { ConditionalLink } from "./components/ConditionalLink";
-import { Reveal } from "./components/Reveal";
-import { experiences, projects, socials } from "./home.data";
+import { createFileRoute } from "@tanstack/react-router";
+import { ConditionalLink } from "@/components/ConditionalLink";
+import { Reveal } from "@/components/Reveal";
+import { experiences, projects, socials } from "@/home.data";
+
+export const Route = createFileRoute("/")({
+  component: Home,
+});
 
 const linkClass =
   "text-neutral-400 underline-offset-4 transition-colors duration-150 hover:text-neutral-900 hover:underline";
 
-export default function Home() {
+function Home() {
   return (
     <div className="mx-auto flex min-h-full max-w-2xl flex-col gap-14 px-6 py-10 lg:gap-20 lg:py-16">
       <Reveal>
@@ -29,13 +33,14 @@ export default function Home() {
       <main className="flex flex-1 flex-col gap-14 lg:gap-20">
         <Reveal delay={60}>
           <section className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-10">
-            <Image
-              src="/melvyn.webp"
-              width={1254}
-              height={1254}
-              alt="Engraved portrait of Melvyn Malherbe"
+            <img
+              src="/melvyn-352.webp"
+              srcSet="/melvyn-352.webp 352w, /melvyn-704.webp 704w"
               sizes="(min-width: 640px) 176px, 144px"
-              preload
+              width={352}
+              height={352}
+              alt="Engraved portrait of Melvyn Malherbe"
+              fetchPriority="high"
               className="size-36 shrink-0 mix-blend-multiply sm:order-last sm:size-44"
             />
             <div className="flex flex-col gap-4 text-pretty">
