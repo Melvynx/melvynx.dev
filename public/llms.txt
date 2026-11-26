@@ -1,0 +1,12 @@
+# Melvyn Malherbe (Melvynx)
+
+> Melvyn Malherbe, aussi appelé Melvynx, est développeur full-stack, entrepreneur et formateur français. Il a fondé Codelynx.dev (formations pour apprendre à coder avec React, Next.js et l'IA) et crée des vidéos sur YouTube (@melvynxdev) sur le code et le montage vidéo avec l'IA.
+
+## Liens
+
+- [Accueil](https://melvynx.dev/): parcours, projets et liens
+- [Apps](https://melvynx.dev/apps): les apps Mac créées par Melvyn
+- [Codelynx.dev](https://codelynx.dev): formations et tutoriels en français
+- [Articles](https://codelynx.dev/posts): tous les tutoriels
+- [Qui est Melvyn Malherbe](https://codelynx.dev/melvyn-malherbe): biographie détaillée
+- [YouTube](https://www.youtube.com/@melvynxdev): vidéos sur le code et le montage avec l'IA

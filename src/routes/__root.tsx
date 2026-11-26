@@ -12,7 +12,36 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Melvyn Malherbe - Software Engineer" },
-      { name: "description", content: "Software engineer and entrepreneur" },
+      {
+        name: "description",
+        content:
+          "Melvyn Malherbe (Melvynx): développeur full-stack, entrepreneur et formateur, fondateur de Codelynx.dev.",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Melvyn Malherbe",
+          alternateName: "Melvynx",
+          url: "https://melvynx.dev",
+          image: "https://melvynx.dev/melvyn-704.webp",
+          jobTitle: "Développeur full-stack et formateur",
+          worksFor: {
+            "@type": "Organization",
+            name: "Codelynx",
+            url: "https://codelynx.dev",
+          },
+          sameAs: [
+            "https://codelynx.dev/melvyn-malherbe",
+            "https://melvynx.com",
+            "https://www.youtube.com/@melvynxdev",
+            "https://github.com/Melvynx",
+          ],
+        }),
+      },
     ],
     links: [
       { rel: "stylesheet", href: styles },
