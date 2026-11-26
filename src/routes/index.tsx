@@ -20,6 +20,9 @@ function Home() {
             <a className={linkClass} href="#work">
               work
             </a>
+            <a className={linkClass} href="/apps">
+              apps
+            </a>
             <a className={linkClass} href="https://codelynx.dev/posts">
               writing
             </a>
