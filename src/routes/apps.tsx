@@ -18,25 +18,26 @@ export const Route = createFileRoute("/apps")({
 const linkClass =
   "text-neutral-400 underline-offset-4 transition-colors duration-150 hover:text-neutral-900 hover:underline";
 
+/** Each card trails a little less than the one before, so the first ones lead. */
+const CARD_DELAYS = [100, 140, 172, 198, 220];
+
 function Apps() {
   return (
     <div className="mx-auto flex min-h-full max-w-4xl flex-col gap-14 px-6 py-10 lg:gap-20 lg:py-16">
-      <Reveal>
-        <header className="flex items-baseline justify-between">
-          <Link to="/" className="font-medium">
-            Melvyn Malherbe
+      <header className="flex items-baseline justify-between">
+        <Link to="/" className="font-medium">
+          Melvyn Malherbe
+        </Link>
+        <nav className="flex gap-5 text-neutral-400">
+          <Link className={linkClass} to="/">
+            home
           </Link>
-          <nav className="flex gap-5 text-neutral-400">
-            <Link className={linkClass} to="/">
-              home
-            </Link>
-            <span className="text-neutral-900">apps</span>
-            <a className={linkClass} href="https://mlv.sh/twitter">
-              contact
-            </a>
-          </nav>
-        </header>
-      </Reveal>
+          <span className="text-neutral-900">apps</span>
+          <a className={linkClass} href="https://mlv.sh/twitter">
+            contact
+          </a>
+        </nav>
+      </header>
 
       <main className="flex flex-1 flex-col gap-10 lg:gap-14">
         <Reveal delay={60}>
@@ -54,7 +55,7 @@ function Apps() {
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {apps.map((app, index) => (
             <li key={app.slug} className="flex">
-              <Reveal delay={120 + index * 50} className="flex w-full">
+              <Reveal delay={CARD_DELAYS[index] ?? 240} className="flex w-full">
                 <AppCard app={app} />
               </Reveal>
             </li>
@@ -62,7 +63,7 @@ function Apps() {
         </ul>
       </main>
 
-      <Reveal delay={420}>
+      <Reveal delay={300}>
         <footer className="border-t border-neutral-100 pt-8 text-neutral-400">
           Made by{" "}
           <Link className={linkClass} to="/">
@@ -100,7 +101,7 @@ function AppCard({ app }: { app: App }) {
       <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3">
         <a
           href={app.download}
-          className="inline-flex h-10 items-center gap-2 rounded-full bg-neutral-900 px-4 text-sm font-medium text-white transition-[background-color,transform] duration-150 hover:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 active:scale-[0.97]"
+          className="inline-flex h-11 items-center gap-2 rounded-full bg-neutral-900 px-4 text-sm font-medium text-white transition-[background-color,transform] duration-150 ease-out hover:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 active:scale-[0.97]"
           aria-label={`Download ${app.name}`}
         >
           <svg
@@ -118,12 +119,18 @@ function AppCard({ app }: { app: App }) {
           Download
         </a>
         {app.site ? (
-          <a className={`text-sm ${linkClass}`} href={app.site}>
+          <a
+            className={`inline-flex h-11 items-center text-sm ${linkClass}`}
+            href={app.site}
+          >
             Website
           </a>
         ) : null}
         {app.source ? (
-          <a className={`text-sm ${linkClass}`} href={app.source}>
+          <a
+            className={`inline-flex h-11 items-center text-sm ${linkClass}`}
+            href={app.source}
+          >
             Source
           </a>
         ) : null}
